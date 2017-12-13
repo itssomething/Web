@@ -9,7 +9,7 @@ body{
 	text-align: center;
 }
 .item{
-	display: inline-block;
+	display: inline-block; /* dùng cái anyf thì set đc chiều cao chiều rộng */
 	padding: 10px;
 	padding-right: 20px;
 	padding-left: 20px;
@@ -23,7 +23,12 @@ a{
 	color: black;
 	text-decoration: none;
 }
+menu span :hover{
+	cursor: pointer;
+	color: white;
+}
 a:hover{
+	cursor: pointer;
 	color: white;
 }
 .menu_vertical{
