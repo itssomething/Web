@@ -1,0 +1,39 @@
+h1{
+	color: red;
+	font-size: 60px;
+}
+.colorBlue{
+	color: blue;
+}
+#top{
+	text-decoration: underline;
+}
+li{
+	color: red;
+}
+ul li{
+	color: blue; /*li trong ul chuyen sang blue*/
+}
+ul>li{
+	color: green; /*chọn cái con trực tiếp aka đi xuống 1 lvl*/
+}
+section span{
+	color: #A901BD;
+	border: 1px solid #CD2222; /*do rong cua border*/
+}
+section>span{
+	color: blue; /*con trực tiếp*/
+}
+span:hover{
+	color: violet;
+}
+span,a{ /*kết hợp cái nhẹ*/
+
+}
+nav{
+	background-color: red;
+}
+
+/*display block: tràn màn hình
+inline: sát nhau
+chỉ có block mới set đc height;
