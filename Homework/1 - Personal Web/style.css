@@ -1,0 +1,114 @@
+body{
+	font-family: Lato;
+	margin-left: 20%;
+	margin-right: 20%;
+	background-color: #f8f9fb;
+	font-family: sans-serif;
+}
+h1{
+	color: white;
+}
+img{
+	width: 100%;
+}
+ul{
+	list-style-type: none;
+	margin: 0px;
+}
+
+.menu{
+	background-color: #0e81f8;
+}
+li{
+	display: inline-block;
+	padding: 20px;
+	color: white;
+	font-family: Lato;
+	font-size: 20px;
+}
+.div-2{
+	margin-right: 20%;
+	margin-left: 20%;
+}
+.profile-pic{
+	width: 200px;
+	display: inline-block;
+}
+.name{
+	display: inline-block;
+	background-color: white;
+	text-align: center;
+	vertical-align: middle;
+/* 	line-height: 40px; */
+	position: absolute;
+	margin-top: 100px;
+	padding: 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.job{
+	position: absolute;
+	display: inline-block;
+	margin-top: 200px;
+}
+.education{
+    margin-top: 4px;
+	background-color: #f85a40;
+	color: white;
+	padding: 20px;
+	font-family: Lato;
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+}
+.skill{
+	margin-top: 4px;
+	font-family: Lato;
+	background-color: #0a8ea0;
+	color: white;
+	padding: 20px;
+	font-family: Lato;
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+}
+.title{
+    font-size: 26px;
+    font-weight: bold;
+}
+.grid-container{
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+}
+.item1{
+	grid-column-start: 1;
+	grid-column-end: 2;
+	margin-top: 4px;
+	font-family: Lato;
+	background-color: #ffc845;
+	color: white;
+	padding: 20px;
+	font-family: Lato;
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	margin-right: 2px;
+}
+.item2{
+	grid-column-start: 3;
+	grid-column-end: 4;
+	margin-top: 4px;
+	font-family: Lato;
+	background-color: #52565e;
+	color: white;
+	padding: 20px;
+	font-family: Lato;
+	font-size: 16px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	margin-left: 2px;
+}
