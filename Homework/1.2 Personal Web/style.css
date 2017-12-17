@@ -49,7 +49,7 @@ body{
 }
 .section2{
 	background: #22252c;
-	height: 720px;
+/* 	height: 720px; */
 	color: white;
 }
 .col-3-7{
@@ -138,4 +138,31 @@ body{
 }
 .university{
 	font-size: 30px;
+}
+.section4{
+
+}
+.grid-container4{
+	display: grid;
+
+	grid-template-columns: 10% 35% 10% 35% 10%;
+}
+.center{
+	text-align: center;
+}
+.exp-line{
+	height: 580px;
+}
+.exp{
+	font-size: 25px;
+}
+.font15{
+	font-size: 15px;
+}
+.right{
+	float: right;
+	text-align: right;
+}
+.font45{
+	font-size: 45px;
 }
