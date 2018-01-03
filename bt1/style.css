@@ -13,7 +13,11 @@ body{
 	padding: 10px;
 	padding-right: 20px;
 	padding-left: 20px;
-	/*margin: 10px;*/
+	/* margin: 10px;
+	margin-left: 20px;
+	margin-right: 20px; */
+	position: relative;
+
 }
 .item:hover{
 	background-color: #9CD08F;
@@ -28,7 +32,7 @@ menu span :hover{
 	color: white;
 }
 a:hover{
-	cursor: pointer;
+	/* cursor: pointer; */
 	color: white;
 }
 .menu_vertical{
@@ -42,4 +46,26 @@ a:hover{
 }
 .border{
 	
+}
+.submenu{
+	display: none;
+	position: absolute;
+	background-color: #D5B0AC;
+	/* min-width: 100px; */
+	right: 0px;
+	left: 0px;
+	top: 37px;
+}
+.submenu a{
+	color: black;
+	padding: 10px;
+	padding-top: 10px;
+}
+.submenu div{
+	display: block;
+	position: relative;
+}
+.item:hover .submenu{
+	display: block;
+
 }
