@@ -8,17 +8,15 @@ Router.get('/', (req, res)=>{
         layout: "main",
     });
 });
+
 Router.post('/', (req, res) => {
-    fs.readFile('./public/question.json', {encoding: 'utf-8'}, (err, data) => {
-        //console.log(err);
-        let word = JSON.parse(data);
-        let text = req.body;
-        text.id = word.length + 1;
-        word.push(text);
-        fs.writeFile('./public/question.json', JSON.stringify(word), (err) => {
-            if (err) {console.log(err);}
-        });
-        res.redirect('/ask');
+    var data = fs.readFileSync("./public/question.json");
+    let word = JSON.parse(data);
+    let question = req.body;
+    question.id = word.length+1;
+    word.push(question);
+    fs.writeFile('./question.json', JSON.stringify(word), (err) => {
+        if (err) {console.log(err);}
     });
 });
 

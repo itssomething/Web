@@ -17,7 +17,7 @@ Router.get('/:id', (req, res)=>{
     for( let item of word ){
         if(item.id == req.params.id){
             console.log(item.id);
-            res.render("question", {layout: "main", id: item.id, text: item.text});
+            res.render("question", {layout: "main", id: item.id, question: item.question});
             break;
         }
     }      
