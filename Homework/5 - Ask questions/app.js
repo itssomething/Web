@@ -32,7 +32,6 @@ app.use('/ask', askRouter);
 app.use('/question', questionRouter);
 
 app.use(express.static('public'));
-app.use(express.bodyParser());
 
 app.listen(config.port, (err) => {
     if (err) { console.log(err); };
