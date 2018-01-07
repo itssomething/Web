@@ -1,6 +1,7 @@
 const express = require('express');
 const Router = express.Router();
 const fs = require('fs');
+const bodyParser = require('body-parser');
 
 Router.get('/', (req, res)=>{
     // res.render("about");
@@ -13,6 +14,9 @@ Router.post('/', (req, res) => {
     var data = fs.readFileSync("./public/question.json");
     let word = JSON.parse(data);
     let question = req.body;
+    console.log("req text");
+    console.log(req.body.text);
+    console.log(req.body);
     question.id = word.length+1;
     word.push(question);
     fs.writeFile('./question.json', JSON.stringify(word), (err) => {

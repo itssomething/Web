@@ -4,13 +4,14 @@ const handlebars = require('express-handlebars');
 const fs = require('fs');
 const askRouter = require('./askRouter');
 const questionRouter = require('./questionRouter');
+const bodyParser = require('body-parser');
 
 let app = express();
 // var data = fs.readFileSync('./public/question.json');
 // var word = JSON.parse(data);
 // console.log(word);
 
-
+app.use(bodyParser.urlencoded({ extended: true }));
 app.engine("handlebars", handlebars({defaultLayout: 'main'}));
 app.set("view engine", "handlebars");
 
@@ -31,6 +32,7 @@ app.use('/ask', askRouter);
 app.use('/question', questionRouter);
 
 app.use(express.static('public'));
+app.use(express.bodyParser());
 
 app.listen(config.port, (err) => {
     if (err) { console.log(err); };
