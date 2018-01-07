@@ -12,16 +12,15 @@ Router.get('/', (req, res)=>{
 
 Router.get('/:id', (req, res)=>{
     console.log(req.params.id);
-    fs.readFileSync("./public/question.json", {encoding: 'utf-8'}, (res) => {
-        let word = JSON.parse(data);
-        for( let item of word ){
-            if(item.id == req.params.id){
-                console.log(item.id);
-                res.render("question", {layout: "main", id: item.id, text: item.text});
-                break;
-            }
-        }      
-    });  
-});
+    let data = fs.readFileSync("./public/question.json");
+    let word = JSON.parse(data);
+    for( let item of word ){
+        if(item.id == req.params.id){
+            console.log(item.id);
+            res.render("question", {layout: "main", id: item.id, text: item.text});
+            break;
+        }
+    }      
+});  
 
 module.exports = Router;
