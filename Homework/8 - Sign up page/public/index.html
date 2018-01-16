@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<script>
+    $(document).ready(function(){
+        $("#username").blur(function(){
+            if( !$(this).val() ){
+                $("#alert-username").removeClass("hidden");
+            }
+            else{
+                $("#alert-username").addClass("hidden");
+            }            
+        });
+        $("#email").blur(function(){
+            if( !$(this).val() ){
+                $("#alert-email").removeClass("hidden");
+            }
+            else{
+                $("#alert-email").addClass("hidden");
+            }
+        });
+        $("#username").blur(function(){
+            if($("#username").val() != ''){
+                $.ajax({
+                    url: "/signup",
+                    method: "post",
+                    data: $("#username").val(),
+                })
+                .done((result) =>{
+                    $("username-unique-alert").html(result);
+                })
+            }
+        });
+    });
+    // $(document).ready(function(){
+    //     $( "#username" ).change(function() {
+    //         $("#alert-username").addClass("hidden");
+    //     });
+    // document.getElementById('username').onBlur = () => {
+    //     $("username").addClass("hidden");
+    // };
+    // fucntion show(){
+    //     document.getElementById("username").classList.remove("hidden");
+    // }
+</script>
+
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6">
+                <form action="/signup" method="post" accept-charset="utf-8">
+                    <h1>Sign up</h1>
+                    <div id="alert-username" class="alert alert-danger hidden">User name must not be empty</div>
+                    <input id="username" type="text" name="username" value="" placeholder="User name">
+                    <br>
+                    <br>
+                    <div id="alert-email" class="alert alert-danger hidden">Email must not be empty</div>
+                    <input id="email" type="text" name="email" value="" placeholder="Email">
+                    <br>
+                    <br>
+                    <input type="submit" name="submit" value="Submit" placeholder="">
+                </form>
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+    <div id="username-unique-alert">
+        
+    </div>
+</body>
+</html>
