@@ -23,22 +23,25 @@ app.post('/signup', (req,res) => {
     //     "username":userName,
     //     "email":email,
     // };
-    userController.addUser(req.body.username, req.body.email, (err, id) => {
+    userController.addUser(req.body.username, req.body.email, (err, data) => {
         if (err){
             console.log(err);
         }
         else {
             userController.findUser(req.body.username, req.body.email, (err, user) =>{
+                console.log(user);
+                console.log("checking unique");
                 if (err) {
                     console.log(err);
                 }
                 if (user){
-                    res.send("User exsisted")
+                    console.log("usernam existed app");
+                    res.send("User exsisted");
                 }
-                else {
+                else{
                     res.send(`Welcome ${req.body.username}`);
                 }
-            });            
+            });         
         }
     });
 });
